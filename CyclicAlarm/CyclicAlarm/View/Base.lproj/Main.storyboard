@@ -40,11 +40,11 @@
                                 <rect key="frame" x="255" y="547" width="90" height="90"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="auz-mO-Sd0"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="auz-mO-Sd0"/>
                                     <constraint firstAttribute="height" constant="90" id="shB-ul-pkV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="60"/>
-                                <state key="normal" title="+">
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <state key="normal" title="NEW">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -55,6 +55,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Mh4-ZN-Na9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="ElX-Jo-gpu"/>
                             <constraint firstItem="4Kn-KK-SI1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="J0g-JM-3KT"/>
                             <constraint firstItem="4Kn-KK-SI1" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="W3o-aF-4WL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mh4-ZN-Na9" secondAttribute="bottom" constant="30" id="W9d-OL-Nfb"/>
@@ -87,14 +88,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-hl-2re">
-                                <rect key="frame" x="100" y="44" width="275" height="623"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="10" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="GsA-hl-2re">
+                                <rect key="frame" x="90" y="44" width="285" height="623"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellSettings" id="a2D-yk-7wx" customClass="SettingsTableViewCell" customModule="CyclicAlarm" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="275" height="80"/>
+                                        <rect key="frame" x="0.0" y="28" width="285" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a2D-yk-7wx" id="0gt-p0-QRv">
-                                            <rect key="frame" x="0.0" y="0.0" width="275" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="285" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lf-wD-sXa">
@@ -104,7 +105,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R6x-oZ-cfg">
-                                                    <rect key="frame" x="216" y="24.5" width="51" height="31"/>
+                                                    <rect key="frame" x="226" y="24.5" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="switchChange" destination="a2D-yk-7wx" eventType="valueChanged" id="mTm-lf-Gow"/>
                                                     </connections>
@@ -129,13 +130,20 @@
                                     <outlet property="delegate" destination="9sd-64-7kN" id="WUV-2N-dFo"/>
                                 </connections>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kZ7-od-wFW" customClass="NumberOfDays" customModule="CyclicAlarm" customModuleProvider="target">
+                                <rect key="frame" x="10" y="49" width="73" height="570"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="GsA-hl-2re" firstAttribute="leading" secondItem="kZ7-od-wFW" secondAttribute="trailing" constant="7" id="8QY-4v-AgW"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="top" secondItem="Dqv-9O-Pyn" secondAttribute="top" id="8yh-ra-ktt"/>
-                            <constraint firstItem="GsA-hl-2re" firstAttribute="leading" secondItem="Dqv-9O-Pyn" secondAttribute="leading" constant="100" id="dqk-ez-J9d"/>
+                            <constraint firstItem="kZ7-od-wFW" firstAttribute="leading" secondItem="Dqv-9O-Pyn" secondAttribute="leading" constant="10" id="PLu-Bh-dCb"/>
+                            <constraint firstItem="GsA-hl-2re" firstAttribute="leading" secondItem="Dqv-9O-Pyn" secondAttribute="leading" constant="90" id="dqk-ez-J9d"/>
+                            <constraint firstItem="kZ7-od-wFW" firstAttribute="top" secondItem="Dqv-9O-Pyn" secondAttribute="top" constant="5" id="eR4-TD-m0W"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="bottom" secondItem="Dqv-9O-Pyn" secondAttribute="bottom" id="ftM-pi-DJe"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="trailing" secondItem="Dqv-9O-Pyn" secondAttribute="trailing" id="kUy-96-kot"/>
+                            <constraint firstItem="Dqv-9O-Pyn" firstAttribute="bottom" secondItem="kZ7-od-wFW" secondAttribute="bottom" constant="48" id="uNA-nO-nUC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dqv-9O-Pyn"/>
                     </view>
