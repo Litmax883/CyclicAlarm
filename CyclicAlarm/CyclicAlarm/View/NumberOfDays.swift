@@ -39,14 +39,14 @@ final class NumberOfDays: UIStackView {
         for index in 0...6 {
             
             let button = UIButton()
-            button.backgroundColor = .red
+            button.backgroundColor = .lightGray
             
             button.layer.cornerRadius = 35
             button.clipsToBounds = true
             
-            button.titleLabel?.text = "\(index + 1)"
+            button.setTitle("\(index + 1)", for: .normal)
             button.titleLabel?.font = .monospacedSystemFont(ofSize: 20, weight: .medium)
-            button.titleLabel?.textColor = .black
+            button.setTitleColor(.black, for: .normal)
             
             // Add constrains
             button.translatesAutoresizingMaskIntoConstraints = false
