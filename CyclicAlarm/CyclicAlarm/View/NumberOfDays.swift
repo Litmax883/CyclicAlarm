@@ -8,11 +8,16 @@
 
 import UIKit
 
-final class NumberOfDays: UIStackView {
+@IBDesignable class NumberOfDays: UIStackView {
 
 // MARK: Properties
     
     private var alarmButtons = [UIButton]()
+    private var numberOfAlarm = 0 {
+        didSet {
+            updateNumberOfAlarms()
+        }
+    }
     
 // MARK: Initialisation
     
@@ -31,22 +36,44 @@ final class NumberOfDays: UIStackView {
     
     @objc func buttonTapped(button: UIButton) {
         
+        guard let index = alarmButtons.firstIndex(of: button) else { return }
+        
+        numberOfAlarm = index + 1
+        
     }
     
     private func setupButtons() {
+        
+        // List of buttons colors
+        let bundle = Bundle(for: type(of: self))
+        
+        let turnOnButton = UIImage(named: "turnOnButton",
+                                   in: bundle,
+                                   compatibleWith: self.traitCollection)
+        
+        let turnOffButton = UIImage(named: "turnOffButton",
+                                    in: bundle,
+                                    compatibleWith: self.traitCollection)
+        
         
         // Create buttons
         for index in 0...6 {
             
             let button = UIButton()
-            button.backgroundColor = .lightGray
+            
+            // Set the button color
+            button.setBackgroundImage(turnOnButton, for: .selected)
+            button.setBackgroundImage(turnOffButton, for: .normal)
+
             
             button.layer.cornerRadius = 35
             button.clipsToBounds = true
             
             button.setTitle("\(index + 1)", for: .normal)
-            button.titleLabel?.font = .monospacedSystemFont(ofSize: 20, weight: .medium)
+            button.titleLabel?.font = .monospacedSystemFont(ofSize: 20, weight: .thin)
             button.setTitleColor(.black, for: .normal)
+            button.setTitleColor(.white, for: .selected)
+
             
             // Add constrains
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -59,10 +86,19 @@ final class NumberOfDays: UIStackView {
             // Add button to the stack
             addArrangedSubview(button)
             
+            // Default first alarm
+            numberOfAlarm = 1
+            
             // Add the new button on array
             alarmButtons.append(button)
             
         }
         
+    }
+    
+    private func updateNumberOfAlarms () {
+        for (index, button) in alarmButtons.enumerated() {
+            button.isSelected = index < numberOfAlarm
+        }
     }
 }

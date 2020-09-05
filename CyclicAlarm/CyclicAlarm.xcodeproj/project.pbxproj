@@ -45,6 +45,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047880BD25037025005BFFDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		04D9194124FFD21F00394494 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +73,7 @@
 			children = (
 				04D9196324FFD28400394494 /* Controller */,
 				04D9196224FFD27B00394494 /* View */,
+				047880BD25037025005BFFDA /* Model */,
 				04D9196124FFD25600394494 /* Support */,
 			);
 			path = CyclicAlarm;

@@ -36,15 +36,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="O2i-wg-N2w"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mh4-ZN-Na9">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mh4-ZN-Na9">
                                 <rect key="frame" x="255" y="547" width="90" height="90"/>
                                 <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="auz-mO-Sd0"/>
                                     <constraint firstAttribute="height" constant="90" id="shB-ul-pkV"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
-                                <state key="normal" title="NEW">
+                                <state key="normal" title="New">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -61,7 +60,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Mh4-ZN-Na9" secondAttribute="bottom" constant="30" id="W9d-OL-Nfb"/>
                             <constraint firstItem="4Kn-KK-SI1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gkv-xy-xWT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mh4-ZN-Na9" secondAttribute="trailing" constant="30" id="rZO-Af-ykq"/>
-                            <constraint firstItem="4Kn-KK-SI1" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xEk-nV-FwQ"/>
+                            <constraint firstItem="4Kn-KK-SI1" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="xEk-nV-FwQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -98,8 +97,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="285" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lf-wD-sXa">
-                                                    <rect key="frame" x="15" y="29.5" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lf-wD-sXa">
+                                                    <rect key="frame" x="15" y="30" width="38" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -131,7 +130,10 @@
                                 </connections>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kZ7-od-wFW" customClass="NumberOfDays" customModule="CyclicAlarm" customModuleProvider="target">
-                                <rect key="frame" x="10" y="49" width="73" height="570"/>
+                                <rect key="frame" x="10" y="49" width="73" height="550"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="550" id="6Jn-fp-bVt"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -143,7 +145,6 @@
                             <constraint firstItem="kZ7-od-wFW" firstAttribute="top" secondItem="Dqv-9O-Pyn" secondAttribute="top" constant="5" id="eR4-TD-m0W"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="bottom" secondItem="Dqv-9O-Pyn" secondAttribute="bottom" id="ftM-pi-DJe"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="trailing" secondItem="Dqv-9O-Pyn" secondAttribute="trailing" id="kUy-96-kot"/>
-                            <constraint firstItem="Dqv-9O-Pyn" firstAttribute="bottom" secondItem="kZ7-od-wFW" secondAttribute="bottom" constant="48" id="uNA-nO-nUC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dqv-9O-Pyn"/>
                     </view>
@@ -174,7 +175,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWH-cR-CRl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="310" y="125"/>
+            <point key="canvasLocation" x="-482" y="125"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
