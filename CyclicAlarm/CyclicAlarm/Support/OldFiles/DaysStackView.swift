@@ -8,18 +8,21 @@
 
 import UIKit
 
-@IBDesignable class NumberOfDays: UIStackView {
+final class DaysStackView: UIStackView {
+    
+    // MARK: Properties
+    
 
-// MARK: Properties
     
     private var alarmButtons = [UIButton]()
     private var numberOfAlarm = 0 {
         didSet {
-            updateNumberOfAlarms()
+            updateNumberOfAlarms ()
         }
     }
     
-// MARK: Initialisation
+    
+    // MARK: Initialisation
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -32,29 +35,26 @@ import UIKit
         setupButtons()
     }
     
-// MARK: Button action
+    // MARK: Button action
     
     @objc func buttonTapped(button: UIButton) {
         
         guard let index = alarmButtons.firstIndex(of: button) else { return }
-        
         numberOfAlarm = index + 1
         
     }
     
+    // MARK: Share buttons
+    
+
+    
+    // MARK: Create buttons
+    
     private func setupButtons() {
         
-        // List of buttons colors
-        let bundle = Bundle(for: type(of: self))
-        
-        let turnOnButton = UIImage(named: "turnOnButton",
-                                   in: bundle,
-                                   compatibleWith: self.traitCollection)
-        
-        let turnOffButton = UIImage(named: "turnOffButton",
-                                    in: bundle,
-                                    compatibleWith: self.traitCollection)
-        
+        // List of buttons color
+        let turnOnButton = UIImage(named: "turnOnButton")
+        let turnOffButton = UIImage(named: "turnOffButton")
         
         // Create buttons
         for index in 0...6 {
@@ -64,7 +64,6 @@ import UIKit
             // Set the button color
             button.setBackgroundImage(turnOnButton, for: .selected)
             button.setBackgroundImage(turnOffButton, for: .normal)
-
             
             button.layer.cornerRadius = 35
             button.clipsToBounds = true
@@ -73,7 +72,6 @@ import UIKit
             button.titleLabel?.font = .monospacedSystemFont(ofSize: 20, weight: .thin)
             button.setTitleColor(.black, for: .normal)
             button.setTitleColor(.white, for: .selected)
-
             
             // Add constrains
             button.translatesAutoresizingMaskIntoConstraints = false
@@ -96,9 +94,10 @@ import UIKit
         
     }
     
-    private func updateNumberOfAlarms () {
+    func updateNumberOfAlarms () {
         for (index, button) in alarmButtons.enumerated() {
             button.isSelected = index < numberOfAlarm
+
         }
     }
 }

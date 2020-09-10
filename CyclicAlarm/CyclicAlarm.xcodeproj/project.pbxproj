@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		043FD445250187390013112D /* NumberOfDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FD444250187390013112D /* NumberOfDays.swift */; };
+		043FD445250187390013112D /* DaysStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043FD444250187390013112D /* DaysStackView.swift */; };
+		04758C3B250A1E15004D9F55 /* SettingsVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04758C3A250A1E15004D9F55 /* SettingsVCExtensions.swift */; };
+		04758C3D250A1E58004D9F55 /* ListVCExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04758C3C250A1E58004D9F55 /* ListVCExtensions.swift */; };
+		047880BF2503D540005BFFDA /* HeaderOfMainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047880BE2503D540005BFFDA /* HeaderOfMainTableView.swift */; };
+		047880C12503DDB6005BFFDA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047880C02503DDB6005BFFDA /* Model.swift */; };
+		047880C32503F2D4005BFFDA /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047880C22503F2D4005BFFDA /* TimeManager.swift */; };
 		04D9194E24FFD21F00394494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9194D24FFD21F00394494 /* AppDelegate.swift */; };
 		04D9195224FFD21F00394494 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9195124FFD21F00394494 /* ListViewController.swift */; };
 		04D9195524FFD21F00394494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D9195324FFD21F00394494 /* Main.storyboard */; };
@@ -17,10 +22,16 @@
 		04D9196724FFFBB700394494 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9196624FFFBB700394494 /* SettingsViewController.swift */; };
 		04D9196924FFFFC600394494 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9196824FFFFC600394494 /* AlertController.swift */; };
 		04D9196B2500230200394494 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9196A2500230200394494 /* SettingsTableViewCell.swift */; };
+		04F70DF225090BE100192E4F /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F70DF125090BE100192E4F /* KeyboardObservable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		043FD444250187390013112D /* NumberOfDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberOfDays.swift; sourceTree = "<group>"; };
+		043FD444250187390013112D /* DaysStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysStackView.swift; sourceTree = "<group>"; };
+		04758C3A250A1E15004D9F55 /* SettingsVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVCExtensions.swift; sourceTree = "<group>"; };
+		04758C3C250A1E58004D9F55 /* ListVCExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVCExtensions.swift; sourceTree = "<group>"; };
+		047880BE2503D540005BFFDA /* HeaderOfMainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOfMainTableView.swift; sourceTree = "<group>"; };
+		047880C02503DDB6005BFFDA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		047880C22503F2D4005BFFDA /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
 		04D9194A24FFD21F00394494 /* CyclicAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyclicAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9194D24FFD21F00394494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D9195124FFD21F00394494 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +43,7 @@
 		04D9196624FFFBB700394494 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		04D9196824FFFFC600394494 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		04D9196A2500230200394494 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		04F70DF125090BE100192E4F /* KeyboardObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,9 +57,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04758C38250A0917004D9F55 /* OldFiles */ = {
+			isa = PBXGroup;
+			children = (
+				043FD444250187390013112D /* DaysStackView.swift */,
+			);
+			path = OldFiles;
+			sourceTree = "<group>";
+		};
+		04758C39250A1DD7004D9F55 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04758C3C250A1E58004D9F55 /* ListVCExtensions.swift */,
+				04758C3A250A1E15004D9F55 /* SettingsVCExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		047880BD25037025005BFFDA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				047880C02503DDB6005BFFDA /* Model.swift */,
+				047880C22503F2D4005BFFDA /* TimeManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,6 +113,7 @@
 		04D9196124FFD25600394494 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				04758C38250A0917004D9F55 /* OldFiles */,
 				04D9194D24FFD21F00394494 /* AppDelegate.swift */,
 				04D9195B24FFD22000394494 /* Info.plist */,
 				04D9195824FFD22000394494 /* LaunchScreen.storyboard */,
@@ -97,7 +129,8 @@
 				04D9196424FFD5C800394494 /* TableViewCell.swift */,
 				04D9196A2500230200394494 /* SettingsTableViewCell.swift */,
 				04D9196824FFFFC600394494 /* AlertController.swift */,
-				043FD444250187390013112D /* NumberOfDays.swift */,
+				047880BE2503D540005BFFDA /* HeaderOfMainTableView.swift */,
+				04F70DF125090BE100192E4F /* KeyboardObservable.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,6 +140,7 @@
 			children = (
 				04D9195124FFD21F00394494 /* ListViewController.swift */,
 				04D9196624FFFBB700394494 /* SettingsViewController.swift */,
+				04758C39250A1DD7004D9F55 /* Extensions */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -182,13 +216,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04F70DF225090BE100192E4F /* KeyboardObservable.swift in Sources */,
+				04758C3D250A1E58004D9F55 /* ListVCExtensions.swift in Sources */,
+				047880C12503DDB6005BFFDA /* Model.swift in Sources */,
 				04D9196524FFD5C800394494 /* TableViewCell.swift in Sources */,
 				04D9196924FFFFC600394494 /* AlertController.swift in Sources */,
 				04D9196B2500230200394494 /* SettingsTableViewCell.swift in Sources */,
 				04D9195224FFD21F00394494 /* ListViewController.swift in Sources */,
+				047880BF2503D540005BFFDA /* HeaderOfMainTableView.swift in Sources */,
 				04D9194E24FFD21F00394494 /* AppDelegate.swift in Sources */,
 				04D9196724FFFBB700394494 /* SettingsViewController.swift in Sources */,
-				043FD445250187390013112D /* NumberOfDays.swift in Sources */,
+				047880C32503F2D4005BFFDA /* TimeManager.swift in Sources */,
+				04758C3B250A1E15004D9F55 /* SettingsVCExtensions.swift in Sources */,
+				043FD445250187390013112D /* DaysStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

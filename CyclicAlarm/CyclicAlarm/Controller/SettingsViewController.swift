@@ -10,24 +10,35 @@ import UIKit
 
 final class SettingsViewController: UIViewController {
     
-    // MARK: Properties
-    
-    
-    
     // MARK: Outlets
     
-    @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var nameField: UITextField!
+    
+    // MARK: Properties
+    
+    let numberOfRows =  7
+    
     
     // MARK: Actions
     
-
+    
     
     
     // MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        clearFooter()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        registerObservers()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unregisterObservers()
     }
     
 }
@@ -41,16 +52,22 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        7
+        numberOfRows
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CellSettings") as! SettingsTableViewCell
         
+        cell.setTextFieldToDatePicker()
+        cell.setToolbarToTextField()
+        cell.configureButtons(indexPath: indexPath.row)
+    
+        
         return cell
     }
-    
-    
 }
+
+
 
