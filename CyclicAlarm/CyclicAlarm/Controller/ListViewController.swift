@@ -65,12 +65,13 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Section settings
     func numberOfSections(in tableView: UITableView) -> Int {
-        3
+        2
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
             "sectionHeader") as! HeaderOfMainTableView
+        
         view.title.text = "shosho"
         view.image.image = UIImage(systemName: "alarm")
         

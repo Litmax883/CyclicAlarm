@@ -11,6 +11,8 @@ import UIKit
 final class SettingsTableViewCell: UITableViewCell {
     
     // MARK: Properties
+    var buttonStatus = false
+    var oneDayModel = DayModel()
     
     lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
@@ -23,19 +25,18 @@ final class SettingsTableViewCell: UITableViewCell {
     @IBOutlet weak var timeField: UITextField!
     @IBOutlet weak var switchController: UISwitch!
     @IBOutlet weak var chooseButton: UIButton!
-    
+    @IBOutlet weak var offLabel: UILabel!
     
     // MARK: Actions
     
     @IBAction func switchChange() {
         timeField.isHidden = !timeField.isHidden
+        offLabel.isHidden = !offLabel.isHidden
     }
     
     @IBAction func chooseButtonPress() {
-        print("azaza")
-
+        buttonTurn()
     }
-    
     
     // MARK: Toolbar settings
     
@@ -44,7 +45,7 @@ final class SettingsTableViewCell: UITableViewCell {
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneAction))
-         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         toolbar.setItems([flexSpace, doneButton], animated: true)
         timeField.inputAccessoryView = toolbar
         
@@ -60,16 +61,11 @@ final class SettingsTableViewCell: UITableViewCell {
     func configureButtons(indexPath: Int) {
         
         chooseButton.setTitle("\(indexPath + 1)", for: .normal)
-
-        chooseButton.setBackgroundImage(UIImage(named: "turnOnButton"), for: .selected)
-        chooseButton.setBackgroundImage(UIImage(named: "turnOffButton"), for: .normal)
         
         chooseButton.layer.cornerRadius = 25
         chooseButton.clipsToBounds = true
-        
-        // SetUp the button action
-        chooseButton.addTarget(self, action: #selector(buttonTapped(button:)), for: .touchUpInside)
-        
+        chooseButton.setBackgroundImage(UIImage(named: "turnOnButton"), for: .normal)
+
     }
     
     func setTextFieldToDatePicker () {
@@ -90,12 +86,43 @@ final class SettingsTableViewCell: UITableViewCell {
         timeField.text = formatter.string(from: datePicker.date)
     }
     
-    @objc func buttonTapped(button: UIButton) {
-        
 
+    
+    func buttonTurn() {
+
+        if !buttonStatus {
+            chooseButton.setBackgroundImage(UIImage(named: "turnOffButton"), for: .normal)
+            buttonStatus = true
+            
+            timeField?.isHidden = true
+            offLabel.isHidden = true
+            switchController.isHidden = true
+            switchController.isOn = false
+        } else {
+            chooseButton.setBackgroundImage(UIImage(named: "turnOnButton"), for: .normal)
+            buttonStatus = false
+            
+            timeField.isHidden = false
+            offLabel.isHidden = true
+            switchController.isHidden = false
+            switchController.isOn = true
+        }
     }
     
-
+    func turnSomeButtons() {
+        chooseButton.setBackgroundImage(UIImage(named: "turnOnButton"), for: .normal)
+        buttonStatus = false
+        timeField?.isHidden = false
+        switchController.isHidden = false
+        switchController.isOn = true
+        offLabel.isHidden = true
+    }
+    
+    
+    
+    
+    
+    
     
     
     

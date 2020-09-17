@@ -6,19 +6,20 @@
 //  Copyright © 2020 Litmax. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-struct DayModel {
+class CycleModel: Object {
     
-    var time: String?
-    var date: String?
-    var enabled: Bool
+    @objc dynamic var name = "Alarm"
+    var listOfDays = List<DayModel>()
     
 }
 
-struct CycleModel {
+
+class DayModel: Object {
     
-    var name: String?
-    var listOfDays: [DayModel]?
+    @objc dynamic var time: String?
+    @objc dynamic var enabled = true
     
 }
+

@@ -18,6 +18,4 @@ final class TableViewCell: UITableViewCell {
         timeToAlarmLabel.text = time
     }
     
-    
-    
 }

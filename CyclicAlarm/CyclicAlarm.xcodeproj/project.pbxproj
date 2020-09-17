@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		047880BF2503D540005BFFDA /* HeaderOfMainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047880BE2503D540005BFFDA /* HeaderOfMainTableView.swift */; };
 		047880C12503DDB6005BFFDA /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047880C02503DDB6005BFFDA /* Model.swift */; };
 		047880C32503F2D4005BFFDA /* TimeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047880C22503F2D4005BFFDA /* TimeManager.swift */; };
+		04A617492512574C00AC10DC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A617482512574C00AC10DC /* StorageManager.swift */; };
 		04D9194E24FFD21F00394494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9194D24FFD21F00394494 /* AppDelegate.swift */; };
 		04D9195224FFD21F00394494 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9195124FFD21F00394494 /* ListViewController.swift */; };
 		04D9195524FFD21F00394494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D9195324FFD21F00394494 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 		04D9196924FFFFC600394494 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9196824FFFFC600394494 /* AlertController.swift */; };
 		04D9196B2500230200394494 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9196A2500230200394494 /* SettingsTableViewCell.swift */; };
 		04F70DF225090BE100192E4F /* KeyboardObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F70DF125090BE100192E4F /* KeyboardObservable.swift */; };
+		C2888B1426C40BEC601251AC /* Pods_CyclicAlarm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7B9AE75FE9A58E03C92471B /* Pods_CyclicAlarm.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,7 @@
 		047880BE2503D540005BFFDA /* HeaderOfMainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderOfMainTableView.swift; sourceTree = "<group>"; };
 		047880C02503DDB6005BFFDA /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		047880C22503F2D4005BFFDA /* TimeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManager.swift; sourceTree = "<group>"; };
+		04A617482512574C00AC10DC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		04D9194A24FFD21F00394494 /* CyclicAlarm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CyclicAlarm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04D9194D24FFD21F00394494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04D9195124FFD21F00394494 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,9 @@
 		04D9196824FFFFC600394494 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		04D9196A2500230200394494 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		04F70DF125090BE100192E4F /* KeyboardObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObservable.swift; sourceTree = "<group>"; };
+		55EC15039E7CC6B2399DE3D8 /* Pods-CyclicAlarm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyclicAlarm.release.xcconfig"; path = "Target Support Files/Pods-CyclicAlarm/Pods-CyclicAlarm.release.xcconfig"; sourceTree = "<group>"; };
+		A7B9AE75FE9A58E03C92471B /* Pods_CyclicAlarm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CyclicAlarm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CFD31128AA074EA5E90F3526 /* Pods-CyclicAlarm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CyclicAlarm.debug.xcconfig"; path = "Target Support Files/Pods-CyclicAlarm/Pods-CyclicAlarm.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,12 +57,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2888B1426C40BEC601251AC /* Pods_CyclicAlarm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04555940250F5C7A00B503B5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		04758C38250A0917004D9F55 /* OldFiles */ = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +93,7 @@
 			children = (
 				047880C02503DDB6005BFFDA /* Model.swift */,
 				047880C22503F2D4005BFFDA /* TimeManager.swift */,
+				04A617482512574C00AC10DC /* StorageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,6 +103,8 @@
 			children = (
 				04D9194C24FFD21F00394494 /* CyclicAlarm */,
 				04D9194B24FFD21F00394494 /* Products */,
+				35A90DC6C26F4B8B29EFE037 /* Pods */,
+				AB9074BEE0BA0B5AD6211BBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +122,7 @@
 				04D9196324FFD28400394494 /* Controller */,
 				04D9196224FFD27B00394494 /* View */,
 				047880BD25037025005BFFDA /* Model */,
+				04555940250F5C7A00B503B5 /* Protocols */,
 				04D9196124FFD25600394494 /* Support */,
 			);
 			path = CyclicAlarm;
@@ -145,6 +163,23 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		35A90DC6C26F4B8B29EFE037 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CFD31128AA074EA5E90F3526 /* Pods-CyclicAlarm.debug.xcconfig */,
+				55EC15039E7CC6B2399DE3D8 /* Pods-CyclicAlarm.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AB9074BEE0BA0B5AD6211BBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7B9AE75FE9A58E03C92471B /* Pods_CyclicAlarm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -152,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04D9195E24FFD22000394494 /* Build configuration list for PBXNativeTarget "CyclicAlarm" */;
 			buildPhases = (
+				3E5B838A809781B27E49691E /* [CP] Check Pods Manifest.lock */,
 				04D9194624FFD21F00394494 /* Sources */,
 				04D9194724FFD21F00394494 /* Frameworks */,
 				04D9194824FFD21F00394494 /* Resources */,
+				E44FD458A01F3344DE447BC6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -211,6 +248,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3E5B838A809781B27E49691E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CyclicAlarm-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E44FD458A01F3344DE447BC6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CyclicAlarm/Pods-CyclicAlarm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CyclicAlarm/Pods-CyclicAlarm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CyclicAlarm/Pods-CyclicAlarm-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		04D9194624FFD21F00394494 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -227,6 +306,7 @@
 				04D9194E24FFD21F00394494 /* AppDelegate.swift in Sources */,
 				04D9196724FFFBB700394494 /* SettingsViewController.swift in Sources */,
 				047880C32503F2D4005BFFDA /* TimeManager.swift in Sources */,
+				04A617492512574C00AC10DC /* StorageManager.swift in Sources */,
 				04758C3B250A1E15004D9F55 /* SettingsVCExtensions.swift in Sources */,
 				043FD445250187390013112D /* DaysStackView.swift in Sources */,
 			);
@@ -370,6 +450,7 @@
 		};
 		04D9195F24FFD22000394494 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CFD31128AA074EA5E90F3526 /* Pods-CyclicAlarm.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +469,7 @@
 		};
 		04D9196024FFD22000394494 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55EC15039E7CC6B2399DE3D8 /* Pods-CyclicAlarm.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
