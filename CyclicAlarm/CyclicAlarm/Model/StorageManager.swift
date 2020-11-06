@@ -19,5 +19,11 @@ class StorageManager {
         }
     }
     
+    static func deleteObject (_ alarm: CycleModel) {
+        try! realm.write {
+            realm.delete(alarm)
+        }
+    }
+    
     
 }

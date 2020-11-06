@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h4E-5c-idp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h4E-5c-idp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +19,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="1" estimatedSectionFooterHeight="-1" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Kn-KK-SI1">
                                 <rect key="frame" x="0.0" y="135" width="375" height="532"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="Pdc-pt-dPc" customClass="TableViewCell" customModule="CyclicAlarm" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="80"/>
@@ -27,10 +29,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oA-Lz-97h">
-                                                    <rect key="frame" x="311" y="24.5" width="51" height="31"/>
+                                                    <rect key="frame" x="311" y="24.5" width="50" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm in 00 hours 00 minutes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rt9-N5-Yqb">
-                                                    <rect key="frame" x="15" y="11" width="234" height="21.5"/>
+                                                    <rect key="frame" x="16" y="11" width="233" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -83,7 +85,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzb-ZT-eI6">
-                                <rect key="frame" x="150" y="54" width="75.5" height="42"/>
+                                <rect key="frame" x="150.5" y="54" width="74.5" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -95,7 +97,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="ZtP-iR-xd9" firstAttribute="top" secondItem="Yzb-ZT-eI6" secondAttribute="bottom" constant="10" id="CPQ-iM-iOA"/>
                             <constraint firstItem="4Kn-KK-SI1" firstAttribute="top" secondItem="ZtP-iR-xd9" secondAttribute="bottom" constant="5" id="J0g-JM-3KT"/>
@@ -108,7 +111,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mh4-ZN-Na9" secondAttribute="trailing" constant="30" id="rZO-Af-ykq"/>
                             <constraint firstItem="4Kn-KK-SI1" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="xEk-nV-FwQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Alarm list" id="yRG-7M-XdU">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="info.circle" catalog="system" id="DfJ-OT-aOG">
@@ -153,12 +155,12 @@
                                                     </connections>
                                                 </switch>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="SET TIME" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="znS-tl-14D">
-                                                    <rect key="frame" x="135" y="19.5" width="103" height="31.5"/>
+                                                    <rect key="frame" x="136" y="19.5" width="103" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwk-Aj-GLa">
-                                                    <rect key="frame" x="15" y="10" width="50" height="50"/>
+                                                    <rect key="frame" x="16" y="10" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="50" id="W1w-TQ-gvE"/>
                                                         <constraint firstAttribute="width" constant="50" id="p2u-n0-cQ1"/>
@@ -169,7 +171,7 @@
                                                     </connections>
                                                 </button>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- OFF - " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JH9-tb-cem">
-                                                    <rect key="frame" x="145" y="20" width="83.5" height="30"/>
+                                                    <rect key="frame" x="146" y="20" width="83" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -216,7 +218,8 @@
                                 <state key="normal" image="gear" catalog="system"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Dqv-9O-Pyn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="31T-Mw-Wxq" firstAttribute="centerX" secondItem="5vP-Dz-ZLW" secondAttribute="centerX" id="7Gc-xY-l5S"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="top" secondItem="31T-Mw-Wxq" secondAttribute="bottom" constant="5" id="8yh-ra-ktt"/>
@@ -230,7 +233,6 @@
                             <constraint firstItem="GsA-hl-2re" firstAttribute="bottom" secondItem="Dqv-9O-Pyn" secondAttribute="bottom" id="ftM-pi-DJe"/>
                             <constraint firstItem="GsA-hl-2re" firstAttribute="trailing" secondItem="Dqv-9O-Pyn" secondAttribute="trailing" id="kUy-96-kot"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Dqv-9O-Pyn"/>
                     </view>
                     <navigationItem key="navigationItem" title="Set your alarm" id="3gb-9N-NXQ">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="BdG-AK-cnJ">
@@ -275,5 +277,8 @@
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="turnOffButton" width="120" height="120"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

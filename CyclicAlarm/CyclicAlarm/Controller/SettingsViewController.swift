@@ -15,13 +15,10 @@ final class SettingsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var nameField: UITextField!
     
-    
     // MARK: Properties
     
     let numberOfRows =  7 // fixed property - days of week
-    
     let fullCycle = CycleModel()
-    
     
     // MARK: Actions
     
@@ -30,13 +27,10 @@ final class SettingsViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    
-    
     // MARK: LifeCycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         clearFooter()
     }
     
@@ -109,7 +103,13 @@ extension SettingsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func addAllDaysToCycle() {
-        fullCycle.name = nameField.text!
+        
+        if !nameField.text!.isEmpty {
+            fullCycle.name = nameField.text!
+        } else {
+            fullCycle.name = "Name"
+        }
+
         
         tableView.visibleCells.compactMap({
             $0 as? SettingsTableViewCell

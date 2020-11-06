@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class ListViewController: UIViewController {
     
@@ -15,7 +16,8 @@ final class ListViewController: UIViewController {
     let alert = AlertController()
     let timeManager = TimeManager()
     
-    var listOfAlarms = [CycleModel]()
+    var listOfAlarms: [CycleModel] = []
+    
     
     // MARK: Outlets
     
@@ -29,7 +31,7 @@ final class ListViewController: UIViewController {
     
     @IBAction func infoButton () {
         present(alert.showInfoAlert(), animated: true)
-        
+        tableView.reloadData()
     }
     
     @IBAction func addNewAlert () {
@@ -44,13 +46,21 @@ final class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         clearFooter()
         showMainTimeAndData()
         
         tableView.register(HeaderOfMainTableView.self,
                            forHeaderFooterViewReuseIdentifier: "sectionHeader")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        currentTime.center.x -= view.bounds.width
         
+        
+        listOfAlarms = realm.objects(CycleModel.self).map{ $0 }
+        tableView.reloadData()
     }
 }
 
@@ -65,17 +75,24 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     // Section settings
     func numberOfSections(in tableView: UITableView) -> Int {
-        2
+        listOfAlarms.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = tableView.dequeueReusableHeaderFooterView(withIdentifier:
             "sectionHeader") as! HeaderOfMainTableView
         
-        view.title.text = "shosho"
+        if let list = listOfAlarms.first?.name {
+            view.title.text = list
+        } else {
+            view.title.text = "kukuruzik"
+        }
+        
         view.image.image = UIImage(systemName: "alarm")
         
         return view
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -94,6 +111,26 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        guard case .delete = editingStyle else { return }
+        let alarm = self.listOfAlarms.remove(at: indexPath.section)
+        
+        tableView.performBatchUpdates {
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        } completion: { (_) in
+            StorageManager.deleteObject(alarm)
+        }
+
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+
+    
+    
 }
 
 

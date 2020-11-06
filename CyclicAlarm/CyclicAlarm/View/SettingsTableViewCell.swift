@@ -16,6 +16,7 @@ final class SettingsTableViewCell: UITableViewCell {
     
     lazy var datePicker: UIDatePicker = {
         let picker = UIDatePicker()
+        picker.preferredDatePickerStyle = .wheels
         picker.datePickerMode = .time
         return picker
     }()
